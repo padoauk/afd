@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
+    <name>Data Association</name>
+    <id>net.divagari.inkscape.afdset</id>
+    <dependency type="executable" location="extensions">afd_associate.py</dependency>
+
+    <param name="tab" type="notebook">
+      <!-- whether the tab name is "associate_tab" affects whether or not update association -->
+      <page name="associate_tab" gui-text="Associate">
+        <param name="help" type="description">
+          Embed or Update tags to Associate figure to data
+        </param>
+      </page>
+      <page name="show_tab" gui-text="Show Association">
+        <param name="help" type="description">
+          Only Show embedded tags to Associate figure to data
+        </param>
+      </page>
+    </param>
+
+    <effect needs-live-preview="false">
+        <effects-menu>
+            <submenu _name="AFD"/>
+        </effects-menu>
+        <object-type>path</object-type>
+    </effect>
+    <script>
+        <command reldir="extensions" interpreter="python">afd_associate.py</command>
+    </script>
+</inkscape-extension>
